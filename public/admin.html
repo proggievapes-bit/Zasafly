@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a35">
+  <title>ZasaFly | Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark">Z</span><span>Zasa<span>Fly</span></span></a>
+    <p class="side-label">ADMINISTRATION</p>
+    <a class="side-link active" href="#overview">▦ <span>Overview</span></a>
+    <a class="side-link" href="#users-section">♙ <span>Registered students</span></a>
+    <a class="side-link" href="#activity-section">◷ <span>Site activity</span></a>
+    <a class="side-link" href="/">↗ <span>View website</span></a>
+    <div class="sidebar-bottom"><span class="status-dot"></span> Local development</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">ZASAFLY CONTROL CENTRE</span><h1>Admin overview</h1><p>Monitor registrations, logins and recent website activity.</p></div><div class="topbar-actions"><span id="live-badge" class="live-badge offline" title="Real-time connection status"><span class="live-dot"></span><span id="live-text">Connecting…</span></span><button id="refresh-button" class="refresh-button">↻ Refresh data</button></div></header>
+    <div id="admin-message" class="message hidden" role="status"></div>
+    <section id="login-panel" class="login-panel hidden">
+      <div class="login-icon">⌑</div><h2>Admin sign in required</h2><p>Log in with the administrator account configured in your project's .env file.</p><a class="button-link" href="/#account">Go to login page →</a>
+    </section>
+    <section id="overview" class="stats-grid hidden">
+      <article class="stat-card"><span>Total accounts</span><strong id="stat-users">—</strong><small>All registered accounts</small></article>
+      <article class="stat-card stat-live"><span>Registered students</span><strong id="stat-students">—</strong><small>Updates live as students register</small></article>
+      <article class="stat-card"><span>Events in last 24 hours</span><strong id="stat-events">—</strong><small>Recorded site activity</small></article>
+      <article class="stat-card"><span>Registrations in 7 days</span><strong id="stat-registrations">—</strong><small>Recent new students</small></article>
+    </section>
+    <section id="users-section" class="panel hidden">
+      <div class="panel-heading"><div><h2>Registered students <span id="students-count" class="count-chip">0</span></h2><p id="students-sub">Live list of every registered student. Disable or reactivate access below.</p></div><input id="user-search" placeholder="Search name, student no., email or institution…" aria-label="Search students"></div>
+      <div class="table-wrap"><table><thead><tr><th>Student</th><th>Student no.</th><th>Institution</th><th>Registered</th><th>Last login</th><th>Status</th><th>Action</th></tr></thead><tbody id="users-body"><tr><td colspan="7">Loading students…</td></tr></tbody></table></div>
+    </section>
+    <section id="activity-section" class="panel hidden">
+      <div class="panel-heading"><div><h2>Recent site activity</h2><p>Events include registrations, logins, failed logins, logouts and page views.</p></div><select id="event-filter" aria-label="Filter activity"><option value="">All events</option><option value="user_registered">Registrations</option><option value="user_login">Successful logins</option><option value="login_failed">Failed logins</option><option value="user_logout">Logouts</option><option value="page_view">Page views</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>Event</th><th>Description</th><th>Account</th><th>IP address</th><th>Time</th></tr></thead><tbody id="activity-body"><tr><td colspan="5">Loading activity…</td></tr></tbody></table></div>
+      <p class="table-note">IP addresses and browser user-agent details are operational metadata. Limit access and retention, and disclose relevant logging in your privacy notice.</p>
+    </section>
+    <footer> ZasaFly admin prototype · live students build v2 <span>Use responsibly. Protect account and activity data.</span></footer>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

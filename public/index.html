@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a35">
+  <title>ZasaFly | Student Travel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#"><span class="brand-mark">Z</span><span>Zasa<span class="brand-accent">Fly</span></span></a>
+  <nav><a href="#why">Why ZasaFly?</a><a href="#account" id="nav-account">Student account</a><a class="admin-link hidden" id="admin-link" href="/admin.html">Admin panel ↗</a><button id="nav-logout" class="outline-button hidden" type="button">Log out</button></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow"><i></i> MADE FOR STUDENT TRAVEL</span>
+      <h1>Your next journey<br>starts <span>here.</span></h1>
+      <p>A simpler way for students in Zambia to get ready for their next trip. Create your free account to get started.</p>
+      <div class="hero-points"><span>✓ Student-focused experience</span><span>✓ Your details in one place</span></div>
+      <a class="primary-link" href="#account">Create your account <b>→</b></a>
+    </div>
+    <div class="hero-art" aria-label="Airplane illustration"><div class="sun"></div><div class="orbit"></div><div class="plane">✈</div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="art-label"><b>YOUR JOURNEY</b><small>Starts with ZasaFly</small></div><div class="art-caption">YOUR WORLD, WITHIN REACH</div></div>
+  </section>
+  <section class="account-section" id="account">
+    <div class="section-intro"><span class="eyebrow">GET STARTED</span><h2 id="form-heading">Welcome to <span>ZasaFly.</span></h2><p id="form-subheading">Create an account or sign in to continue.</p></div>
+    <div class="account-card" id="auth-card">
+      <div class="tabs"><button class="tab active" id="register-tab" type="button">Create account</button><button class="tab" id="login-tab" type="button">Log in</button></div>
+      <div id="auth-message" class="notice hidden" role="status" aria-live="polite"></div>
+      <form id="register-form">
+        <div class="field-row">
+          <div class="field"><label for="full-name">Full name</label><input id="full-name" name="fullName" autocomplete="name" placeholder="e.g. Chipo Banda" required minlength="2"></div>
+          <div class="field"><label for="student-number">Student number <small>Optional</small></label><input id="student-number" name="studentNumber" placeholder="Your student ID"></div>
+        </div>
+        <div class="field"><label for="register-email">Email address</label><input id="register-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="institution">College or university <small>Optional</small></label><input id="institution" name="institution" placeholder="Name of your institution"></div>
+        <div class="field"><label for="register-password">Password</label><div class="password-wrap"><input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" required><button type="button" class="show-password" data-target="register-password">Show</button></div></div>
+        <div class="field"><label for="confirm-password">Confirm password</label><div class="password-wrap"><input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter password again" required><button type="button" class="show-password" data-target="confirm-password">Show</button></div></div>
+        <label class="terms"><input type="checkbox" id="agree-terms" required> <span>I agree to the prototype privacy note. Don't use a password you use elsewhere.</span></label>
+        <button class="submit-button" type="submit">Create my account <span>→</span></button>
+        <p class="form-foot">Already registered? <button class="inline-button" type="button" id="switch-to-login">Log in</button></p>
+      </form>
+      <form id="login-form" class="hidden">
+        <div class="field"><label for="login-email">Email address</label><input id="login-email" type="email" autocomplete="username" placeholder="you@example.com" required></div>
+        <div class="field"><label for="login-password">Password</label><div class="password-wrap"><input id="login-password" type="password" autocomplete="current-password" placeholder="Your password" required><button type="button" class="show-password" data-target="login-password">Show</button></div></div>
+        <button class="submit-button" type="submit">Log in to ZasaFly <span>→</span></button>
+        <p class="form-foot">New to ZasaFly? <button class="inline-button" type="button" id="switch-to-register">Create an account</button></p>
+      </form>
+    </div>
+    <section id="dashboard" class="dashboard-card hidden" aria-live="polite">
+      <div class="dashboard-top"><div class="avatar" id="avatar">S</div><div><span class="eyebrow">STUDENT DASHBOARD</span><h3>You're in, <span id="welcome-name">student</span>!</h3></div></div>
+      <p>Your account is saved in the ZasaFly MySQL database. Flight search and ticket booking will be added in later stages.</p>
+      <div class="profile-grid"><div><small>EMAIL ADDRESS</small><strong id="profile-email">—</strong></div><div><small>INSTITUTION</small><strong id="profile-institution">Not added</strong></div><div><small>STUDENT NUMBER</small><strong id="profile-student-number">Not added</strong></div><div><small>ACCOUNT TYPE</small><strong id="profile-role">Student</strong></div></div>
+      <button class="submit-button" id="dashboard-logout" type="button">Log out <span>↗</span></button>
+    </section>
+  </section>
+  <section class="why-section" id="why"><div><span class="eyebrow">THE ZASAFLY IDEA</span><h2>Travel plans, <span>made simpler.</span></h2><p>We're starting with secure accounts and the foundation for future flight bookings and student travel tools.</p></div><div class="feature-list"><article class="feature"><div class="feature-icon">01</div><div><h3>Your own account</h3><p>Register and sign in using your email address.</p></div></article><article class="feature"><div class="feature-icon">02</div><div><h3>Student details</h3><p>Keep your institution and student number with your profile.</p></div></article><article class="feature"><div class="feature-icon">03</div><div><h3>Room to grow</h3><p>Flight search, payments and ticket management can come next.</p></div></article></div></section>
+  <p class="privacy-note"><b>Prototype:</b> Passwords are hashed on the server and account records are stored in MySQL. This is still a development setup; add HTTPS, production session storage, rate limiting, email verification and password reset before launch.</p>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">Z</span><span>Zasa<span class="brand-accent">Fly</span></span></a><span>Student travel starts here.</span><span>© <span id="year"></span> ZasaFly Prototype</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
